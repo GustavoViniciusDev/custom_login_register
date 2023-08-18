@@ -75,7 +75,7 @@ class LoginRegisterController extends Controller
 
     public function dashboard()
     {
-        if(Auth::ckeck())
+        if(Auth::check())
         {
             return view('auth.dashboard');
         }
