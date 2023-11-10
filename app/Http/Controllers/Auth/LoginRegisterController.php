@@ -98,5 +98,8 @@ class LoginRegisterController extends Controller
     }
 
 
+    public function forgotPass(){
+        Auth::forgotPass();
+    }
 
 }

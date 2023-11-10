@@ -27,7 +27,14 @@
                                 <span class="text-danger">{{ $errors->first('password') }}</span>
                             @endif
                         </div>
+                        
                     </div>
+                    <div class="mb-4 row">
+                        <div class="col-md-6  text-md-end">
+                            <a href="{{ route('forgotPass') }}"  class="">Esqueceu sua senha?</a>
+                        </div>
+                    </div>
+                    
                     <div class="mb-3 row">
                         <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Logar">
                     </div>
