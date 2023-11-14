@@ -8,7 +8,9 @@
         <div class="card">
             <div class="card-header">Recuperação de senha</div>
             <div class="card-body">
-                <form action="" method="post">
+                <form action="{{ route('forgotPass.store') }}" method="post">
+
+                    @csrf
                     
                     <div class="mb-4 row">
                         <label for="email" class="col-md-4 col-form-label text-md-end text-start">Digite o email cadastrado:</label>
