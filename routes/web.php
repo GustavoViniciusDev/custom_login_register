@@ -60,7 +60,7 @@ Route::post('/forgot-password', function (Request $request) {
 
 
 Route::get('/page-reset-pass/{token}', function (string $token) {
-    return view('auth.mails.page-reset-pass', ['token' => $token]);
+    return view('mails.page-reset-pass', ['token' => $token]);
 })->middleware('guest')->name('password.reset');
 
 
