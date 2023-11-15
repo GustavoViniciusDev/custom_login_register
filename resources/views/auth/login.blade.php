@@ -31,7 +31,7 @@
                     </div>
                     <div class="mb-4 row">
                         <div class="col-md-6  text-md-end">
-                            <a href="{{ route('forgotPass') }}"  class="">Esqueceu sua senha?</a>
+                            <a href="{{ route('password.request') }}"  class="">Esqueceu sua senha?</a>
                         </div>
                     </div>
                     

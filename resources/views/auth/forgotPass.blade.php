@@ -8,14 +8,21 @@
         <div class="card">
             <div class="card-header">Recuperação de senha</div>
             <div class="card-body">
-                <form action="{{ route('forgotPass.store') }}" method="post">
+                <form action="{{ route('password.email') }}" method="post">
 
                     @csrf
                     
+                    @if (session('status'))
+                        <div class="alert alert-ssuccess">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
                     <div class="mb-4 row">
                         <label for="email" class="col-md-4 col-form-label text-md-end text-start">Digite o email cadastrado:</label>
                         <div class="col-md-6">
-                          <input type="email" class="form-control" id="email" name="email" >
+                          <input type="email" class="form-control" id="email" name="email" value="[{{ old('email')}}]" >
+                          <span class="text-danger">@error('email'){{ $message }}</span>
                         
                         </div>
                     </div>                    
