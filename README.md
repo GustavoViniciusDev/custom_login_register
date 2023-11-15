@@ -8,4 +8,5 @@ O sistema em si ainda está bem no inicio, ainda naõ contendo uma identidade vi
 
 
 ## Data Prevista de Lançamento
-    2024
+
+2024
