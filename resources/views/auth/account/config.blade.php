@@ -7,7 +7,7 @@
     <h2 class="text-center"> Informações da sua Conta</h2>
 </div>
 
-<form action="" method="post">
+<form action="{{ route('update') }}" method="post">
     @csrf
     <div class="mb-3 row">
         <label for="name" class="col-md-4 col-form-label text-md-end text-start">Nome de Usuario</label>

@@ -2,7 +2,6 @@
 
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\ForgotPassController;
 use App\Http\Controllers\Auth\UpdateUserController;
 use App\Http\Controllers\Auth\LoginRegisterController;
 use Illuminate\Http\Request;
@@ -30,10 +29,13 @@ Route::controller(LoginRegisterController::class)->group(function() {
 
 
 
-Route::view('auth/account/config', 'auth.account.config')->name('config');
+// Route::view('auth/account/config', 'auth.account.config')->name('config');
+
+
 
 Route::controller(UpdateUserController::class)->group(function(){
-    Route::put('auth/account/config', 'auth.account.config')->name('config');
+    Route::get('/account/config', 'config')->name('config');
+    Route::put('/update', 'update')->name('update');
 });
 
 
