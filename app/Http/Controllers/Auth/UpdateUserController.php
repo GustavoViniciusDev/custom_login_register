@@ -17,23 +17,40 @@ class UpdateUserController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
+
+        
+        $user = auth()->user();
+
+        //    dd($request);
         $request->validate([
-            'nome' => 'required',
-            'email' => 'required',
-            'telefone' => 'required',
-            'password' => 'required'
+            'nome' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'telefone' => 'required|string|max:15',
+            'datanasc'=> 'required|date',
+            'password' => 'required|string|min:8|confirmed',
         ]);
+     
 
-        $result = User::find($id);
-        $result->nome = $request->get('nome');
-        $result->email = $request->get('email');
-        $result->telefone = $request->get('telefone');
-        $result->password = $request->get('password');
-        $result->save();
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->telefone = $request->input('telefone');
+        $user->datanasc = $request->input('datanasc');
 
-        return redirect()->route('auth.account.config')->with('success', 'Informações atualizadas');
+        // dd($user);
+
+        if($request->filled('password')){
+            $user->password = Hash::make($request->input('password'));
+        }
+
+        $user->save();
+
+        dd("teste");
+
+        return redirect()->route('config')->with('success', 'Informações atualizadas com sucesso!');
+
+      
     }
    
 }

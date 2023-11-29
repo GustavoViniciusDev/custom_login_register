@@ -33,9 +33,11 @@ Route::controller(LoginRegisterController::class)->group(function() {
 
 
 
-Route::controller(UpdateUserController::class)->group(function(){
-    Route::get('/account/config', 'config')->name('config');
-    Route::put('/update', 'update')->name('update');
+Route::middleware(['auth'])->group(function () {
+    Route::controller(UpdateUserController::class)->group(function () {
+        Route::get('/account/config', 'config')->name('config');
+        Route::put('/account/config', 'update')->name('update');
+    });
 });
 
 
