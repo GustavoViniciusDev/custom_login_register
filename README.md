@@ -1,5 +1,10 @@
 
+ ## Desconsiderar esse repositorio
 
+
+
+
+ 
 ## Sobre o Sistema
 
 O nicho do sistema ainda não foi definido mas logo sera.
